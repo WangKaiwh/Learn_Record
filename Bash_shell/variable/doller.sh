@@ -6,6 +6,7 @@
 echo "The cost of item is $15"
 
 # \ is meto character, $ is origin show.
+# below result: The cost of item is $15
 echo "The cost of item is \$15"
 
 
