@@ -1,3 +1,15 @@
 
 数值比较的所有情况:
 
+符号   意义
+-eq  : ==
+-ge  : >=
+-gt  : >
+-le  : <=
+-lt  : <
+-ne  : !=
+
+bash shell不会处理浮点数，在float_cmp中，float比较会出错。
+由于[ condition ]是和test语句是等价的，所以test中也不能使用浮点数值。
+
+
