@@ -1,0 +1,14 @@
+
+
+-d file     	file是否是一个目录
+-e file     	file是否存在
+-f file 	检查file是否存在并且是一个文件
+-r file		检查file是否存在并且可读
+-s file		检查file是否存在并且非空
+-w file		检查file是否存在并且可写
+-x file		检查file是否存在并且可执行
+-O file 	检查file是否存在并且属于当前用户所有
+-G file		检查file是否存在并且默认组与当前用户相同
+file1 -nt file2	检查file1是否比file2新
+file1 -ot file2	检查file1是否比file2旧
+
