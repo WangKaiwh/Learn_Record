@@ -4,8 +4,8 @@ usage()
 {
 	echo "$0 <option>"
 	echo "    option: 1, output high"
-	echo "    	  0, output low"
-	echo "            2, read data"
+	echo "            0, output low"
+	echo "            3, reading pin"
 }
 
 judge_para()
@@ -16,7 +16,7 @@ judge_para()
 		exit 1
 	fi
 	
-	if [ "$1" != "1" ] && [ "$1" != "0" ]; then
+	if [ "$1" != "1" ] && [ "$1" != "0" ] && [ "$1" != "3" ]; then
 		usage $@
 		exit 1
 	fi
@@ -32,7 +32,7 @@ work()
 		for word in $line; do
 			if [ ${word:0:3} = "GPI" ]; then
 				echo
-				./bmc_gpio.sh $word $1		
+				./bmc_gpio.sh $word  $1		
 				if [ $? -ne 0 ]; then
 					exit 1
 				fi
