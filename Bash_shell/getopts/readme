@@ -1,0 +1,9 @@
+
+getopt是一个灵活可以将任意形式的命令行参数转换成适当的格式。
+getopt的格式为:
+getopt optstring parameters
+一般和set一起配合使用，见set.sh
+getopt有一个致命的缺陷，不擅长处理空格和引号。
+
+getopts可以解决上述问题.
+
