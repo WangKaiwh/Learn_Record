@@ -1,12 +1,5 @@
+#!/bin/bash
 
-getopt是一个灵活可以将任意形式的命令行参数转换成适当的格式。
-getopt的格式为:
-getopt optstring parameters
-如果optstring中opt带参数，则在后面加上:。
-一般和set一起配合使用，见set.sh
-getopt有一个致命的缺陷，不擅长处理opt后面的空格和引号。
-
-getopts可以解决上述问题.
 # OPTARG表示命令行中的参数
 # OPTIND表示命令行中已经访问到的索引
 # 在getopts中 -a -b等选项，不用加-
@@ -22,5 +15,33 @@ while getopts :ab:cd opt ; do
 	*) echo "unknown opt: $opt";;
 	esac
 done
+
+# 便宜option部分，$@只剩下参数部分
+echo "OPTIND: $OPTIND"
+shift $[ $OPTIND - 1 ]
+echo "\$@: $@"
+#
+
+echo 
+count=1
+
+for para in $@; do
+	echo "para #$count: $para"
+	count=$[ $count + 1 ]
+done
+
+#wangkai@fiberserver:~/workspace/github/Bash_shell/getopts$ ./getopts.sh -a -b hello -cd world wh bj
+#-a option
+#-b option, with para: hello
+#-c option
+#-d option
+#OPTIND: 5
+#$@: world wh bj
+
+#para #1: world
+#para #2: wh
+#para #3: bj
+
+
 
 
