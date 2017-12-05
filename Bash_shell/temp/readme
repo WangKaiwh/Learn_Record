@@ -1,0 +1,7 @@
+
+usage:
+mktemp [option] name.XXXXXX
+name后面必须加6个大写的X。
+
+mktemp -d 生成一个临时的目录
+mktemp -t 在/tmp下生成一个文件。如果没有-t就在当前目录下生成。
