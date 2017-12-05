@@ -8,7 +8,7 @@ usage()
 	echo "$0 <GPIO_NUM/GPIOxx/SGPIxx> <option> "
 	echo "                            option: 1, output high"
 	echo "                                    0, output low"
-	echo "					  3, reading pin"
+	echo "                                    3, reading pin"
 }
 
 if [ $# -ne 2 ]; then
@@ -18,8 +18,10 @@ fi
 
 option=""
 if [ $2 = "1" ]; then
+	gpio_cmds gpio $1 --set-dir-output
 	option="--set-data-high"
 elif [ $2 = "0" ]; then
+	gpio_cmds gpio $1 --set-dir-output
 	option="--set-data-low"
 elif [ $2 = "3" ]; then
 	option="--get-data"
@@ -30,7 +32,6 @@ fi
 
 ## debug
 echo "gpio_cmds gpio $1 $option"
-gpio_cmds gpio $1 --set-dir-output
 gpio_cmds gpio $1 $option
 
 
