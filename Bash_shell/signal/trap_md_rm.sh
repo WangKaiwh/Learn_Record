@@ -17,7 +17,8 @@ while [ $count -lt 3 ]; do
 	count=$[ $count + 1 ]
 done
 
-trap --
+# 取消对信号SIGINT的捕捉
+trap -- SIGINT
 echo "sigint trap cancel"
 count=0
 while [ $count -lt 3 ]; do
