@@ -1,14 +1,18 @@
 #ifndef __FACTORY_H__
 
+//
+// 抽象工厂 
 class aFactory {
 public:
-    aFactory();
+    virtual aProduct* get_product(int type) = 0;	
     virtual ~aFactory();
 
 protected:
-    virtual aProduct* get_product(int type) = 0;
+    aFactory(); // 抽象类是protected
 };
 
+//
+// 具体工厂
 class factory : public aFactory {
 public:
     factory();

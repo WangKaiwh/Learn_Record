@@ -4,9 +4,13 @@
 
 using namespace std;
 
+//
+// 抽象工厂实现
 aFactory::aFactory() {}
 aFactory::~aFactory() {}
 
+//
+// 具体工厂实现
 factory::factory() {}
 factory::~factory() {}
 
