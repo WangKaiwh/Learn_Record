@@ -11,11 +11,11 @@ int main()
     delete p1;
     p1 = NULL;
 	
-	p1 = f->get_product(2);
+    p1 = f->get_product(2);
     p1->operation();
 	
-	delete p1;
-	p1 = NULL;
+    delete p1;
+    p1 = NULL;
     delete f;
     f = NULL;	
 	
