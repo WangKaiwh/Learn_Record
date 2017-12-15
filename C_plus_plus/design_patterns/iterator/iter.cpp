@@ -6,8 +6,8 @@ using namespace std;
 
 //
 // 迭代器接口构造析构函数
-iterInterface::iterInterface() {}
-iterInterface::~iterInterface() {}
+iterInterface::iterInterface() { cout << "iterInterface 构造" << endl;}
+iterInterface::~iterInterface() { cout << "iterInterface 析构" << endl; }
 
 // 
 // 迭代器实体实现
@@ -15,9 +15,10 @@ iter::iter(agg *obj, int index)
 {
 	m_obj = obj;
 	m_index = index;
+	cout << "iter 构造" << endl;
 }
 
-iter::~iter() {}
+iter::~iter() {cout << "iter 析构" << endl;}
 
 int iter::first() 
 {

@@ -14,7 +14,7 @@ protected:
 
 //
 // 定义聚合类实体
-class agg {
+class agg : public aggInterface {
 public:
 	agg();
 	~agg();

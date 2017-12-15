@@ -11,6 +11,9 @@ int main()
 	
 	for (it->first(); !it->end(); it->next())
 		cout << "current: #" << it->current() << endl;
+	
+	delete obj, obj = NULL;
+	delete it, it = NULL;
 
 	return 0;
 }
