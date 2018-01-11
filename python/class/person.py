@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #-*-coding: utf-8
 
 # __metaclass__ = type 确定使用新式类
